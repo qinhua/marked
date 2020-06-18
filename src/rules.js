@@ -156,6 +156,9 @@ block.pedantic = merge({}, block.normal, {
  * Inline-Level Grammar
  */
 const inline = {
+  bilibiliEmoji: /^f\(x\)=∫\(([^A-Z]\w+?)\)sec²xdx/,
+  textEmoji: /^`([^a-zA-Z]+?)`/,
+  codeEmoji: /^:([^A-Z]\w+?):/,
   escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
   autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
   url: noopTest,

@@ -115,6 +115,34 @@ module.exports = class Lexer {
     let token, i, l, lastToken;
 
     while (src) {
+
+      // bilibili表情 f(x)=∫(weiqu)sec²xdx 
+      if (token = this.tokenizer.bilibiliEmoji(src)) {
+        src = src.substring(token.raw.length);
+        if (token.type) {
+          tokens.push(token);
+        }
+        continue;
+      }
+
+      // 文字表情
+      if (token = this.tokenizer.textEmoji(src)) {
+        src = src.substring(token.raw.length);
+        if (token.type) {
+          tokens.push(token);
+        }
+        continue;
+      }
+
+      // 帖吧表情/BBcodeEmoji
+      if (token = this.tokenizer.codeEmoji(src)) {
+        src = src.substring(token.raw.length);
+        if (token.type) {
+          tokens.push(token);
+        }
+        continue;
+      }
+
       // newline
       if (token = this.tokenizer.space(src)) {
         src = src.substring(token.raw.length);
