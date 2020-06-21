@@ -12,6 +12,29 @@ module.exports = class Renderer {
     this.options = options || defaults;
   }
 
+  bilibiliEmoji(text) {
+    let href = text + '.png';
+    href = cleanUrl(this.options.sanitize, this.options.bilibiliEmojiUrl, href);
+    return '<span class="emotion-inline emotion-item">'
+      + '<img src="'
+      + href
+      + '" class="img"></span>';
+  }
+
+  textEmoji(text) {
+    return text;
+  }
+
+  codeEmoji(text) {
+    let href = 'icon_' + text + '.gif';
+    href = cleanUrl(this.options.sanitize, this.options.codeEmojiEmojiUrl, href);
+    return '<img src="'
+     + href
+     + '" alt=":'
+     + text
+     + ':" class="smilies">';
+  }
+
   code(code, infostring, escaped) {
     const lang = (infostring || '').match(/\S*/)[0];
     if (this.options.highlight) {

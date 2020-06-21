@@ -65,42 +65,42 @@ module.exports = class Tokenizer {
   constructor(options) {
     this.options = options || defaults;
   }
-  
+
   bilibiliEmoji(src) {
     const cap = this.rules.inline.bilibiliEmoji.exec(src);
-    if(cap) {
-      if(cap[0].length > 1) {
+    if (cap) {
+      if (cap[0].length > 1) {
         return {
           type: 'bilibiliEmoji',
           raw: cap[0],
           text: cap[1]
-        }
+        };
       }
     }
   }
 
   textEmoji(src) {
     const cap = this.rules.inline.textEmoji.exec(src);
-    if(cap) {
-      if(cap[0].length > 1) {
+    if (cap) {
+      if (cap[0].length > 1) {
         return {
-          type: 'bilibiliEmoji',
+          type: 'textEmoji',
           raw: cap[0],
           text: cap[1]
-        }
+        };
       }
     }
   }
 
   codeEmoji(src) {
     const cap = this.rules.inline.codeEmoji.exec(src);
-    if(cap) {
-      if(cap[0].length > 1) {
+    if (cap) {
+      if (cap[0].length > 1) {
         return {
-          type: 'bilibiliEmoji',
+          type: 'codeEmoji',
           raw: cap[0],
           text: cap[1]
-        }
+        };
       }
     }
   }

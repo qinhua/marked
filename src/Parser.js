@@ -78,7 +78,6 @@ module.exports = class Parser {
         }
         case 'table': {
           header = '';
-
           // header
           cell = '';
           l2 = token.header.length;
@@ -199,6 +198,18 @@ module.exports = class Parser {
     for (i = 0; i < l; i++) {
       token = tokens[i];
       switch (token.type) {
+        case 'bilibiliEmoji': {
+          out += renderer.bilibiliEmoji(token.text);
+          break;
+        }
+        case 'textEmoji': {
+          out += renderer.textEmoji(token.text);
+          break;
+        }
+        case 'codeEmoji': {
+          out += renderer.codeEmoji(token.text);
+          break;
+        }
         case 'escape': {
           out += renderer.text(token.text);
           break;
