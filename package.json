@@ -1,7 +1,7 @@
 {
-  "name": "marked",
-  "description": "A markdown parser built for speed",
-  "author": "Christopher Jeffrey",
+  "name": "l-marked",
+  "description": "带表情包的marked",
+  "author": "lixingyong",
   "version": "1.1.0",
   "main": "./src/marked.js",
   "browser": "./lib/marked.js",
@@ -14,10 +14,10 @@
     "man/",
     "marked.min.js"
   ],
-  "repository": "git://github.com/markedjs/marked.git",
+  "repository": "git@github.com:LIlGG/marked.git",
   "homepage": "https://marked.js.org",
   "bugs": {
-    "url": "http://github.com/markedjs/marked/issues"
+    "url": "https://github.com/LIlGG/marked/issues"
   },
   "license": "MIT",
   "keywords": [

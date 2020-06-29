@@ -18,8 +18,8 @@ function getDefaults() {
     tokenizer: null,
     walkTokens: null,
     xhtml: false,
-    bilibiliEmojiUrl: 'https://cdn.jsdelivr.net/gh/moezx/cdn@2.9.4/img/bili/',
-    codeEmojiEmojiUrl: 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/'
+    bilibiliEmojiUrl: 'https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.1/img/bili/',
+    codeEmojiEmojiUrl: 'https://cdn.jsdelivr.net/gh/LIlGG/cdn@1.0.1/img/Sakura/images/smilies/'
   };
 }
 

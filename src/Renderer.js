@@ -15,8 +15,11 @@ module.exports = class Renderer {
   bilibiliEmoji(text) {
     let href = text + '.png';
     href = cleanUrl(this.options.sanitize, this.options.bilibiliEmojiUrl, href);
-    return '<span class="emotion-inline emotion-item">'
-      + '<img src="'
+    return '<span class="emotion-inline emotion-item '
+      + text
+      + '" data-icon="'
+      + text
+      + '"><img src="'
       + href
       + '" class="img"></span>';
   }
@@ -32,7 +35,9 @@ module.exports = class Renderer {
      + href
      + '" alt=":'
      + text
-     + ':" class="smilies">';
+     + ':" class="smilies" data-icon="'
+     + text
+     + '">';
   }
 
   code(code, infostring, escaped) {

@@ -349,6 +349,7 @@ module.exports = class Lexer {
         }
         continue;
       }
+
       // escape
       if (token = this.tokenizer.escape(src)) {
         src = src.substring(token.raw.length);
