@@ -199,7 +199,7 @@ module.exports = class Parser {
       token = tokens[i];
       switch (token.type) {
         case 'bilibiliEmoji': {
-          out += renderer.bilibiliEmoji(token.text);
+          out += renderer.bilibiliEmoji ? renderer.bilibiliEmoji(token.text) : token.text;
           break;
         }
         case 'textEmoji': {
@@ -207,7 +207,7 @@ module.exports = class Parser {
           break;
         }
         case 'codeEmoji': {
-          out += renderer.codeEmoji(token.text);
+          out += renderer.codeEmoji ? renderer.codeEmoji(token.text) : token.text;
           break;
         }
         case 'escape': {
